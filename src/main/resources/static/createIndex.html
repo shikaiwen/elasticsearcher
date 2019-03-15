@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+<html>
+<script src="https://image.yodobashi.com/catalog/20190228-03/common/js/prototype/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<style>
+    .word{
+        width: 600px;
+        height: 28px;
+    }
+</style>
+<script>
+
+    $(function () {
+
+        $("#start").click(function () {
+
+            $.post("makeIndex", {"words": $("#words").val()}, function (datas) {
+
+                $("#result").html("本次总共创建" + datas + "条索引记录");
+
+            });
+
+        });
+    });
+
+</script>
+<body>
+
+    <div>
+        <label> 検索キーワード: </label><input type="text" id="words" class="word">
+        <input type="button" id="start" value="スタート"/>
+    </div>
+
+<div id="result">
+
+</div>
+</body>
+
+</html>
