@@ -4,6 +4,7 @@
 **/WEB-INF/classes
 **/logs/log*.log
 
+.settings
 .classpath
 .project
 
